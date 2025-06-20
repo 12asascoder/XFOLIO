@@ -1,0 +1,68 @@
+<!-- Animated Footer -->
+<footer class="bubble-footer">
+    <div class="footer-content">
+        <div class="social-grid">
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        
+        <div class="footer-bubbles">
+            <div class="bubble" style="--size:3rem; --delay:0s"></div>
+            <div class="bubble" style="--size:2rem; --delay:1s"></div>
+            <div class="bubble" style="--size:4rem; --delay:2s"></div>
+        </div>
+        
+        <p class="footer-text">📚 Learning something new everyday</p>
+        <p class="copyright">© 2023 [Your Name] - Student & Developer</p>
+    </div>
+</footer>
+
+<style>
+.bubble-footer {
+    background: var(--bg);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: var(--text);
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.2);
+}
+
+.footer-bubbles {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(108, 99, 255, 0.1);
+    border-radius: 50%;
+    animation: float-up 15s infinite linear;
+    animation-delay: var(--delay);
+}
+
+@keyframes float-up {
+    0% { transform: translateY(100%) scale(0); }
+    100% { transform: translateY(-1000%) scale(1.5); }
+}
+</style>

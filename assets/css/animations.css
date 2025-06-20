@@ -1,0 +1,61 @@
+/* Keyframe Animations */
+@keyframes typewriter {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--primary) }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 3px solid var(--primary);
+    white-space: nowrap;
+    animation: 
+        typewriter 3.5s steps(40) 1s 1 normal both,
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes bubble-pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.speech-bubble {
+    animation: bubble-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-text {
+    background: linear-gradient(
+        45deg,
+        var(--primary),
+        var(--secondary),
+        #6C63FF
+    );
+    background-size: 200% auto;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 5s ease-in-out infinite;
+}
+
+/* Floating animation for project cards */
+@keyframes card-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.hover-float {
+    transition: transform 0.3s ease;
+}
+
+.hover-float:hover {
+    animation: card-float 3s ease-in-out infinite;
+}

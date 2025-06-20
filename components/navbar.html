@@ -1,0 +1,61 @@
+<!-- Responsive Navigation Bar -->
+<nav class="glass-nav">
+    <div class="nav-brand">
+        <a href="/" class="glowing-logo">{"<DevPort/>"}</a>
+    </div>
+    
+    <ul class="nav-links">
+        <li><a href="#home" class="nav-link hover-underline">Home</a></li>
+        <li><a href="#projects" class="nav-link hover-underline">Projects</a></li>
+        <li><a href="#blog" class="nav-link hover-underline">Blog</a></li>
+        <li><a href="#contact" class="nav-link hover-underline">Contact</a></li>
+    </ul>
+
+    <div class="theme-switcher">
+        <button class="theme-btn" onclick="changeTheme('dark')">🌙</button>
+        <button class="theme-btn" onclick="changeTheme('light')">☀️</button>
+        <button class="theme-btn" onclick="changeTheme('cyber')">🔮</button>
+    </div>
+</nav>
+
+<style>
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hover-underline {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+
+.glowing-logo {
+    font-family: 'Space Grotesk', monospace;
+    text-decoration: none;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary);
+}
+</style>

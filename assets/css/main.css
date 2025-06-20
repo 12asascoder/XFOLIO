@@ -1,0 +1,347 @@
+:root {
+    --primary: #2563eb;  /* Updated to vibrant blue */
+    --secondary: #3b82f6; /* Complementary blue shade */
+    --accent: #f59e0b;   /* Warm amber for accents */
+    --text: #1e293b;     /* Dark blue-gray for text */
+    --bg: #f8fafc;       /* Cool light background */
+    --bg-gradient: linear-gradient(
+        135deg,
+        rgba(241, 245, 249, 0.95) 0%,
+        rgba(248, 250, 252, 0.95) 100%
+    );
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    background-image: 
+        var(--bg-gradient),
+        radial-gradient(circle at 10% 20%, rgba(235, 245, 255, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(255, 245, 235, 0.4) 0%, transparent 50%);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+}
+
+.profile-image-container {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1rem;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 4px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Update existing nav-header styles */
+.nav-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nav-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+    color: var(--text);
+}
+
+.nav-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.left-nav {
+    width: 250px;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.96); /* Semi-transparent white */
+    padding: 2rem;
+    position: fixed;
+    left: 0;
+    backdrop-filter: blur(8px);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(203, 213, 225, 0.3);
+}
+
+.nav-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 2rem 0;
+}
+.nav-links a:hover {
+    color: var(--accent); /* Using accent color for hover */
+}
+
+.nav-links li {
+    margin: 1rem 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 3rem;
+    width: calc(100% - 250px);
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    transition: all 0.2s ease;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+}
+
+.skills-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.skill {
+    background: rgba(235, 245, 255, 0.6);
+    border-color: rgba(191, 219, 254, 0.4);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content section {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .left-nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: var(--progress);
+    background: var(--primary);
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+/* Timeline Design */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.testimonial {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.testimonial.active {
+    opacity: 1;
+    z-index: 1;
+}
+/* Testimonial Styles */
+#testimonials {
+    background: #f9fafb;
+    padding: 4rem 0;
+}
+
+.testimonial-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    width: 100%;
+}
+
+.testimonial-card.active {
+    opacity: 1;
+    position: relative;
+    height: max-content;
+    width:fit-content;
+}
+
+.quote-icon {
+    font-size: 5rem;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    opacity: 0.2;
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.testimonial-author {
+    border-left: 3px solid var(--primary);
+    padding-left: 1.5rem;
+    margin-top: 2rem;
+}
+
+.author-name {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.author-designation {
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.author-department {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+/* Add these styles to your CSS */
+.timeline-location {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* If not already existing */
+.timeline-company {
+    color: var(--primary);
+    font-weight: 500;
+    margin: 0.5rem 0;
+}
+
+.timeline-date {
+    color: #4b5563;
+    font-size: 0.9rem;
+}
